@@ -4,30 +4,77 @@ A comprehensive tax directory and calculator for the Philippines, featuring mode
 
 ## Getting Started
 
-### Prerequisites
+You can run this application in two ways: using Docker (recommended for beginners) or traditional Node.js setup.
 
+### 🐳 Option 1: Docker Setup (Recommended)
+
+#### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (includes Docker Compose)
+- Git
+
+#### Quick Start with Docker
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd ph-tax-directory
+   ```
+
+2. **Copy environment file:**
+   ```bash
+   copy .env.example .env
+   ```
+   *On Mac/Linux, use `cp .env.example .env`*
+
+3. **Start the application:**
+   ```bash
+   cd docker
+   docker-compose up --build
+   ```
+
+4. **Access the application:**
+   - **Main app**: http://localhost:5173
+   - **With Nginx**: http://localhost:80
+
+#### Docker Management Commands
+- **Stop the application:** `docker-compose down`
+- **View logs:** `docker-compose logs -f app`
+- **Rebuild after changes:** `docker-compose up --build`
+- **Run in background:** `docker-compose up -d`
+
+### 🔧 Option 2: Traditional Node.js Setup
+
+#### Prerequisites
 - Node.js (version 16 or higher)
 - npm or yarn
 
-### Installation
-
-1. Clone the repository:
+#### Installation
+1. **Clone the repository:**
    ```bash
    git clone <repository-url>
-   cd ph-tax-calculator
+   cd ph-tax-directory
    ```
 
-2. Install dependencies:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. Start the development server:
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. **Open your browser and navigate to** `http://localhost:5173`
+
+### 🎯 For Beginners
+
+If you're new to development, Docker is the easiest way to get started:
+
+1. **Download Docker Desktop** from https://www.docker.com/products/docker-desktop/
+2. **Install and start Docker Desktop**
+3. **Follow the Docker Setup steps above** - that's it!
+
+No need to install Node.js, manage versions, or worry about dependencies. Docker handles everything for you!
 
 ## Features
 
