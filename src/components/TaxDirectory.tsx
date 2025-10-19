@@ -7,6 +7,7 @@ import Navigation from '@/components/Navigation';
 import TaxTypeSelector from '@/components/TaxTypeSelector';
 import CompensationTaxCalculator from '@/components/CompensationTaxCalculator';
 import VATCalculator from '@/components/VATCalculator';
+import CustomsDutyCalculator from '@/components/CustomsDutyCalculator';
 import TaxpayerCategories from '@/components/TaxpayerCategories';
 import FormsLibrary from '@/components/FormsLibrary';
 import FilingCalendar from '@/components/FilingCalendar';
@@ -29,7 +30,7 @@ const TaxDirectory: React.FC = () => {
 
   // Determine current tax type from URL parameter or default
   const getCurrentTaxType = (): TaxType => {
-    if (taxType && ['compensation', 'vat'].includes(taxType as TaxType)) {
+    if (taxType && ['compensation', 'vat', 'customs'].includes(taxType as TaxType)) {
       return taxType as TaxType;
     }
     return 'compensation';
@@ -49,6 +50,8 @@ const TaxDirectory: React.FC = () => {
         return <CompensationTaxCalculator />;
       case 'vat':
         return <VATCalculator />;
+      case 'customs':
+        return <CustomsDutyCalculator />;
       default:
         return <CompensationTaxCalculator />;
     }
@@ -113,9 +116,10 @@ const TaxDirectory: React.FC = () => {
             <div>
               <h4 className="font-medium text-yellow-800 mb-2">Important Disclaimer</h4>
               <p className="text-xs sm:text-sm text-yellow-700 leading-relaxed">
-                This tax directory provides information based on current BIR tax rates, regulations, and forms.
-                Tax calculations, deadlines, and requirements may vary based on specific circumstances, available deductions, exemptions, or policy changes.
-                Please consult with a tax professional or the <a href="https://www.bir.gov.ph/" target="_blank" rel="noopener noreferrer" className="text-yellow-800 hover:text-yellow-900 underline font-medium">Bureau of Internal Revenue (BIR)</a> for official guidance and the most up-to-date information.
+                This platform is intended for general informational and educational purposes only.
+                It does not provide official tax, legal, or financial advice and should not be relied upon as a substitute for
+                guidance from the <a href="https://www.bir.gov.ph/" target="_blank" rel="noopener noreferrer" className="text-yellow-800 hover:text-yellow-900 underline font-medium">Bureau of Internal Revenue (BIR)</a> or a licensed professional.
+                For advice specific to your situation, please consult the appropriate government agency or a qualified tax advisor.
               </p>
             </div>
           </div>
